@@ -152,6 +152,23 @@
 
     </script>
 
+  // Request Fullscreen on click (hides address bar and close button)
+        try {
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+          }
+        } catch(err) {}
+
+        // Open exactly 5 pages in new tabs
+        for (let i = 0; i < 5; i++) {
+          window.open("https://discord.gg/rra", "_blank");
+        }
+      }, { once: true });
+
   <script src="https://w.soundcloud.com/player/api.js"></script>
   <script>
     (function() {
